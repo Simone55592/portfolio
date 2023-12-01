@@ -35,6 +35,14 @@
     color: #fff;
 }
 
+/* Informazioni*/
+.fab{
+    color: #000000;
+}
+
+.fab:hover{
+    color: green;
+}
 /* sezione servizi*/
 .servicesText.card{
     height: 300px;
@@ -95,11 +103,11 @@
     font-size: 36px;
 }
 
-.fab:hover {
+.foot:hover {
     color: rgb(236, 192, 18);
 }
 
-.fab {
+.foot {
     color: #000000;
 }
 
