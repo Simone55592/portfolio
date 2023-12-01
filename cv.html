@@ -1,0 +1,123 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Il mio Curriculum Vitae</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--Email JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('YOUR_PUBLIC_KEY');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Simone Adamo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#Home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" target="_blank">Informazioni</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" target="_blank">Servizi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" target="_blank">Progetti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" target="_blank">Contatti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=#cv>Il mio CV</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+     <!-- Sezione Hero -->
+     <section class="bgimage" id="Home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero_text">
+                    <h2 class="hero_title">Simone Adamo</h2>
+                    <p class="hero_sub">Il mio Curriculum Vitae</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sezione CV-->
+    <section id="cv">
+        <div class="container mt-4 pt-5">
+            <h1 class="text-center">Curriculum Vitae</h1>
+            <div class="row mt-4">
+                <div class="col-lg-5 text-center">
+                    <h4 class="text-center">Formazione</h4>
+                    <div class="formazione">
+                        <p class="element"><span class="cv-title">Master Full-Stack Developer</span>, Star2Impact University (in corso)</p>
+                        <p class="element"><span class="cv-title">Corso Python</span>, ProgrammareinPython.it</p>
+                        <p class="element"><span class="cv-title">Corso Social Media Marketing</span>, Archimede Informatica</p>
+                        <p class="element"><span class="cv-title">Corso Social Media Marketing</span>, Forma Camera</p>
+                        <p class="element"><span class="cv-title">Corso HTML + HTML5</span>, Archimede Informatica</p>
+                        <p class="element"><span class="cv-title">Corso CSS2 + CSS3</span>, Archimede Informatica</p>
+                        <p class="element"><span class="cv-title">Diploma Liceo Scientifico</span>, Liceo Scientifico Nomentano (Roma)</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center offset-lg-2">
+                    <h4 class="text-center">Competenze</h4>
+                    <p class="element"><span class="cv-title">Python</span>: Capacità di creare programmi con il linguaggio python</p>
+                        <p class="element"><span class="cv-title">HTML & CSS</span>: Capacità di costruire siti web</p>
+                        <p class="element"><span class="cv-title">Bootstrap</span>: Capacità di creare siti web responsivi e dinamici con il framework Bootstrap</p>
+                        <p class="element"><span class="cv-title">Social Strategies</span>: Capacità di creare strategie social per aziende o privati, sia impostando campagne sia lavorando in organico</p>
+                        <p class="element"><span class="cv-title">Content Creator</span>: Capacità di consigliare e creare i contenuti social originali e creativi</p>
+                </div>
+            </div>
+        </div>
+</section>
+    <!-- footer-->
+ <footer id="footer">
+    <div class="container-fluid">
+        <!-- social media -->
+        <div class="social-icons mt-4">
+            <a href="https://www.facebook.com/simone.adamo.33/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/adamo.simone5/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/adamo.simone5/" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <div class="copyright">Copyright © 2023 Simone Adamo. All rights reserved. Design By <a href="index.html" class="footer-link">Simone Adamo</a> Images<a href="https://unsplash.com/it" class="footer-link"> Unsplash</a> Icons <a href="https://fontawesome.com/" class="footer-link">Font Awesome</a></div>
+</footer>
+
+</body>
